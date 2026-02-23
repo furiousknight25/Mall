@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dolswgag5s7d7"]
 
-[ext_resource type="Script" uid="uid://dc5ffxdlyp28w" path="res://IntroductionScreen/introduction_screen.gd" id="1_j43pe"]
-[ext_resource type="Texture2D" uid="uid://djyqk8cw3xkm6" path="res://IntroductionScreen/Assets/instruction_background.png" id="2_qm54g"]
-[ext_resource type="Texture2D" uid="uid://ck3nosnmp3sq5" path="res://IntroductionScreen/Assets/mouse_lined_icon.png" id="3_8ocp6"]
-[ext_resource type="Script" uid="uid://cv1tqomq6d35i" path="res://Effect Components/node2D_effect.gd" id="3_qm54g"]
-[ext_resource type="Texture2D" uid="uid://c2ue5vkjoa5s" path="res://IntroductionScreen/Assets/drag.png" id="4_6ekf3"]
+[ext_resource type="Script" uid="uid://dc5ffxdlyp28w" path="res://Frameworks(YourStuff)/TrickTape/IntroductionScreen/introduction_screen.gd" id="1_j43pe"]
+[ext_resource type="Texture2D" uid="uid://djyqk8cw3xkm6" path="res://Frameworks(YourStuff)/TrickTape/IntroductionScreen/Assets/instruction_background.png" id="2_qm54g"]
+[ext_resource type="Texture2D" uid="uid://ck3nosnmp3sq5" path="res://Frameworks(YourStuff)/TrickTape/IntroductionScreen/Assets/mouse_lined_icon.png" id="3_8ocp6"]
+[ext_resource type="Script" uid="uid://cv1tqomq6d35i" path="res://Frameworks(YourStuff)/TrickTape/Effect Components/old_node2D_effect.gd" id="3_qm54g"]
+[ext_resource type="Texture2D" uid="uid://c2ue5vkjoa5s" path="res://Frameworks(YourStuff)/TrickTape/IntroductionScreen/Assets/drag.png" id="4_6ekf3"]
+
 
 [sub_resource type="Animation" id="Animation_qm54g"]
 resource_name = "rotate_loop"

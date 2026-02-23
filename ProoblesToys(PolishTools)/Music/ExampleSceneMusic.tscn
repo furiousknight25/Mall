@@ -7,10 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://quff0pn7b5wn" path="res://ProoblesToys(PolishTools)/Music/TestSongs/INurSHOP.rhod.wav" id="4_u83o6"]
 [ext_resource type="AudioStream" uid="uid://h2qhq8vme1dn" path="res://ProoblesToys(PolishTools)/Music/TestSongs/INurSHOP.voca.wav" id="5_je7w0"]
 [ext_resource type="Texture2D" uid="uid://5ppa8fa3kdqx" path="res://ProoblesToys(PolishTools)/Music/TestSongs/small.png" id="7_gslqq"]
-[ext_resource type="Script" uid="uid://cv1tqomq6d35i" path="res://Frameworks(YourStuff)/TrickTape/Effect Components/node2D_effect.gd" id="8_60vmj"]
+[ext_resource type="Script" uid="uid://cv1tqomq6d35i" path="res://Frameworks(YourStuff)/TrickTape/Effect Components/old_node2D_effect.gd" id="8_60vmj"]
 [ext_resource type="Texture2D" uid="uid://mxlc8owdfq0y" path="res://ProoblesToys(PolishTools)/Music/TestSongs/normalwhat.png" id="9_jotqx"]
 [ext_resource type="Texture2D" uid="uid://cjlhonjrrcpdp" path="res://ProoblesToys(PolishTools)/Music/TestSongs/skinny.png" id="10_6bvsx"]
 [ext_resource type="Texture2D" uid="uid://s3g6ysqr6kpc" path="res://ProoblesToys(PolishTools)/Music/TestSongs/fat.png" id="11_cmj1y"]
+
 
 [node name="ExampleSceneMusic" type="Node2D" unique_id=1818873361]
 script = ExtResource("1_ppg4l")

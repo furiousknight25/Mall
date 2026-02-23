@@ -23,7 +23,7 @@ const MIX_PAINT_JUDE_ = preload("res://Frameworks(YourStuff)/Jude/MixColors/MixP
 const EXAMPLE_SCENE_MUSIC = preload("res://ProoblesToys(PolishTools)/Music/ExampleSceneMusic.tscn")
 const PONG = preload("res://Frameworks(YourStuff)/Pong;)/scenes/main.tscn")
 
-var all_games : Array[PackedScene] = [BASEPLATE, PONG]
+var all_games : Array[PackedScene] = [TRICK_TAPE, BASEPLATE, PONG]
 
 ## List of games left to play this stage before time scale increases
 var games_to_play_this_stage : Array[PackedScene]

@@ -1,22 +1,22 @@
 class_name IntroductionScreen extends Control
 
 @onready var background: Sprite2D = $Background
-@onready var background_drag_in: Node2DEffect = $Background/DragIn
-@onready var background_drag_out: Node2DEffect = $Background/DragOut
+@onready var background_drag_in: OldNode2DEffect = $Background/DragIn
+@onready var background_drag_out: OldNode2DEffect = $Background/DragOut
 
 
 @onready var mouse_icon: Sprite2D = $MouseIcon
-@onready var mouse_icon_drag_in: Node2DEffect = $MouseIcon/DragIn
-@onready var mouse_icon_drag_out: Node2DEffect = $MouseIcon/DragOut
+@onready var mouse_icon_drag_in: OldNode2DEffect = $MouseIcon/DragIn
+@onready var mouse_icon_drag_out: OldNode2DEffect = $MouseIcon/DragOut
 
 
 @onready var drag: Sprite2D = $Drag
-@onready var drag_drag_in: Node2DEffect = $Drag/DragIn
-@onready var drag_drag_out: Node2DEffect = $Drag/DragOut
+@onready var drag_drag_in: OldNode2DEffect = $Drag/DragIn
+@onready var drag_drag_out: OldNode2DEffect = $Drag/DragOut
 @onready var drag_player: AnimationPlayer = $DragPlayer
 
-@onready var turn_right: Node2DEffect = $Drag/TurnRight
-@onready var turn_left: Node2DEffect = $Drag/TurnLeft
+@onready var turn_right: OldNode2DEffect = $Drag/TurnRight
+@onready var turn_left: OldNode2DEffect = $Drag/TurnLeft
 
 func _ready() -> void:
 	get_tree().paused = true

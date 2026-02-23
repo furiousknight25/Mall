@@ -1,4 +1,4 @@
-@abstract class_name TweenEffect extends Node
+@abstract class_name OldTweenEffect extends Node
 ## The TweenEffect class is an abstract class meant to be used to build out other
 ## effect classes using tweens. [br]
 ## This class contains all of the information relating to the tween including

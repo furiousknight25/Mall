@@ -1,4 +1,4 @@
-class_name Node2DEffect extends TweenEffect
+class_name OldNode2DEffect extends OldTweenEffect
 ## [Node2DEffect] is an extension of [TweenEffect] and additionally contains
 ## position, rotation, and scale parameters.
 

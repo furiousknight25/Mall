@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://httejcqk3k6r" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/win.png" id="1_d347c"]
 [ext_resource type="Script" uid="uid://cf2fdwwca2xlb" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/win_lose_screen.gd" id="1_te5r4"]
-[ext_resource type="Script" uid="uid://cv1tqomq6d35i" path="res://Frameworks(YourStuff)/TrickTape/Effect Components/node2D_effect.gd" id="3_aabum"]
+[ext_resource type="Script" uid="uid://cv1tqomq6d35i" path="res://Frameworks(YourStuff)/TrickTape/Effect Components/old_node2D_effect.gd" id="3_aabum"]
 [ext_resource type="Texture2D" uid="uid://il68s75rgxnp" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/cloud.png" id="4_5sqgv"]
 [ext_resource type="Texture2D" uid="uid://bqtwca7juvwei" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/whimsy.png" id="5_te5r4"]
 [ext_resource type="Texture2D" uid="uid://bg6umg32rybuk" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/lose.png" id="6_5sqgv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b8j431dfbwqo8" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/slash_1.png" id="8_h2vue"]
 [ext_resource type="Texture2D" uid="uid://ciyc5x8k7488x" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/slash_2.png" id="9_4bgr5"]
 [ext_resource type="Texture2D" uid="uid://tkwb15dew2l8" path="res://Frameworks(YourStuff)/TrickTape/Win Lose UI/Assets/slash_3.png" id="10_2l805"]
+
 
 [node name="Win_Lose Screen" type="Control" unique_id=1294610884]
 layout_mode = 3

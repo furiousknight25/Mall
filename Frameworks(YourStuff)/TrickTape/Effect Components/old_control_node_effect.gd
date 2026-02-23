@@ -1,4 +1,4 @@
-class_name ControlNodeEffect extends TweenEffect
+class_name OldControlNodeEffect extends OldTweenEffect
 ## [ControlNodeEffect] is an extension of [TweenEffect] and additionally contains
 ## position, rotation, and scale parameters, while also taking into account the 
 ## pivot position.

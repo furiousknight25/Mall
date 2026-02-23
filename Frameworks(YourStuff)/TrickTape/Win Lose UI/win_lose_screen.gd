@@ -2,32 +2,32 @@ class_name WinLoseScreen extends Control
 
 #region win stuff
 @onready var win_sprite: Sprite2D = $WinSprite
-@onready var win_sprite_effect: Node2DEffect = $WinSprite/StampEffect
+@onready var win_sprite_effect: OldNode2DEffect = $WinSprite/StampEffect
 
 @onready var win_background: Sprite2D = $WinBackground
-@onready var win_background_effect: Node2DEffect = $WinBackground/StampEffect
+@onready var win_background_effect: OldNode2DEffect = $WinBackground/StampEffect
 
 @onready var whimsy: Sprite2D = $Whimsy
-@onready var stamp_effect: Node2DEffect = $Whimsy/StampEffect
+@onready var stamp_effect: OldNode2DEffect = $Whimsy/StampEffect
 #endregion
 
 #region lose stuff
 
 @onready var lose_sprite: Sprite2D = $LoseSprite
-@onready var grow_lose: Node2DEffect = $LoseSprite/Grow
+@onready var grow_lose: OldNode2DEffect = $LoseSprite/Grow
 
 
 @onready var lose_background: Sprite2D = $LoseBackground
-@onready var grow_background: Node2DEffect = $LoseBackground/Grow
+@onready var grow_background: OldNode2DEffect = $LoseBackground/Grow
 
 @onready var slash_1: Sprite2D = $Slash1
-@onready var slash_1_grow: Node2DEffect = $Slash1/Grow
+@onready var slash_1_grow: OldNode2DEffect = $Slash1/Grow
 
 @onready var slash_2: Sprite2D = $Slash2
-@onready var slash_2_grow: Node2DEffect = $Slash2/Grow
+@onready var slash_2_grow: OldNode2DEffect = $Slash2/Grow
 
 @onready var slash_3: Sprite2D = $Slash3
-@onready var slash_3_grow: Node2DEffect = $Slash3/Grow
+@onready var slash_3_grow: OldNode2DEffect = $Slash3/Grow
 
 
 
