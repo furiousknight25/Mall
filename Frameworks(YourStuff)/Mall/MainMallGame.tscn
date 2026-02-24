@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dro5d573niwan"]
+
+[ext_resource type="Script" uid="uid://6cxuvycm8n6m" path="res://Frameworks(YourStuff)/Mall/main_mall_game.gd" id="1_ddgo5"]
+
+[node name="MainMallGame" type="Node2D" unique_id=30059727]
+script = ExtResource("1_ddgo5")
