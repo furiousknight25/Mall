@@ -59,4 +59,4 @@ func call_planet_decrease() -> void:
 
 func progress_paths() -> void:
 	for path : EldritchParticleFollow in paths_array:
-		get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).tween_property(path, "progress_ratio", path.progress_ratio + path_movement_percent, 0.25)
+		get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK).tween_property(path, "progress_ratio", path.progress_ratio + path_movement_percent, 0.3)
