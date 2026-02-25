@@ -20,6 +20,13 @@ func _ready() -> void:
 	initialize_planets()
 	adaptive_music.start()
 	connect_adaptive_music_signals()
+	adaptive_music.fuck.connect(do_planet_beat_effect)
+
+
+func do_planet_beat_effect() -> void:
+	for planet : Planet in planets:
+		planet.do_beat_effect()
+
 
 func initialize_planets() -> void:
 	var good_planet : GoodPlanet

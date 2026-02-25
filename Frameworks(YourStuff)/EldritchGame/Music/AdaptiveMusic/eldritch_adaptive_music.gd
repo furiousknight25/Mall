@@ -1,11 +1,12 @@
 class_name EldritchAdaptiveMusic extends Node
 
 signal half_bar
-signal current_beat
+signal half_beat
+signal beat
 signal current_bar
 signal current_four_bar
 signal current_eight_bar
-
+signal fuck
 @export var master_track : AudioStreamPlayer
 @export var intro : AudioStreamPlayer
 @export var win_outro : AudioStreamPlayer
@@ -37,9 +38,13 @@ func _process(_delta: float) -> void:
 	if !(current_beat_index > last_beat_index or current_beat_index == 0 and last_beat_index > current_beat_index):
 		return
 	
-	current_beat.emit()
+	half_beat.emit()
 	last_beat_index = current_beat_index
 	bar_index += 1
+	if bar_index % 2 == 0:
+		beat.emit()
+	if bar_index % 4 == 2:
+		fuck.emit()
 	if bar_index % 4 == 0:
 		half_bar.emit()
 	if bar_index % 8 == 0:

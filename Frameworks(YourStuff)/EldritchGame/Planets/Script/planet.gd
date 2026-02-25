@@ -2,8 +2,14 @@ class_name Planet extends Node2D
 
 @warning_ignore('unused_signal') signal planet_eaten
 @onready var node_2d_effect: Node2DEffect = %Node2DEffect
+@onready var beat_effect: Node2DEffect = %BeatEffect
 
 var already_eaten : bool = false
+
+
+func do_beat_effect() -> void:
+	beat_effect.do_tween()
+
 
 func die() -> void:
 	node_2d_effect.do_tween()

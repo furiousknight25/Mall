@@ -33,4 +33,15 @@ ease_type = 2
 tween_duration = 0.3
 metadata/_custom_type_script = "uid://cv1tqomq6d35i"
 
+[node name="BeatEffect" type="Node" parent="." unique_id=484293925 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("3_hjphg")
+affected_node = NodePath("../Sprite2D")
+start_scale = Vector2(0.5, 0.3)
+end_scale = Vector2(0.3, 0.8)
+reset_on_completion = true
+trans_type = 10
+tween_duration = 0.1
+metadata/_custom_type_script = "uid://cv1tqomq6d35i"
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
