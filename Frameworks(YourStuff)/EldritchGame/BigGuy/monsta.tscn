@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://c61aau1jumg7e" path="res://Frameworks(YourStuff)/EldritchGame/Assets/Bubble.png" id="1_oib2s"]
 [ext_resource type="Script" uid="uid://gfjf7u4o65vc" path="res://Frameworks(YourStuff)/EldritchGame/BigGuy/monsta.gd" id="2_0kg8r"]
 [ext_resource type="PackedScene" uid="uid://bjtulespe1alq" path="res://Frameworks(YourStuff)/EldritchGame/EatingZone/eating_zone.tscn" id="2_jq0kd"]
+[ext_resource type="AudioStream" uid="uid://c45rlryar6xuy" path="res://Frameworks(YourStuff)/EldritchGame/Music/bigclap.mp3" id="4_6osyy"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_85suy"]
+random_pitch = 1.1892071
+streams_count = 1
+stream_0/stream = ExtResource("4_6osyy")
 
 [node name="Monsta" type="Sprite2D" unique_id=161056806]
 z_index = 1
@@ -14,3 +20,6 @@ position = Vector2(0, 98)
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=902371243]
 position = Vector2(0, 25)
+
+[node name="Clap" type="AudioStreamPlayer" parent="." unique_id=551960422]
+stream = SubResource("AudioStreamRandomizer_85suy")
