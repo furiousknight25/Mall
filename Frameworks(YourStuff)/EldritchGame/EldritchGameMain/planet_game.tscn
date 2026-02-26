@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dr7bwknbkxqko" path="res://Frameworks(YourStuff)/EldritchGame/Assets/Progressbar.png" id="4_1sid8"]
 [ext_resource type="PackedScene" uid="uid://cd6d6c3cl3n5o" path="res://Frameworks(YourStuff)/EldritchGame/BigGuy/monsta.tscn" id="4_eq008"]
 [ext_resource type="Texture2D" uid="uid://bri4lnwyvb3hv" path="res://Frameworks(YourStuff)/EldritchGame/Assets/Progressbar_fill.png" id="5_uniig"]
+[ext_resource type="PackedScene" uid="uid://ptsg4si05tkq" path="res://Frameworks(YourStuff)/EldritchGame/Music/AdaptiveMusic/eldritch_adaptive_music.tscn" id="6_uniig"]
 
 [sub_resource type="Curve2D" id="Curve2D_3vgps"]
 _data = {
@@ -42,3 +43,5 @@ offset_bottom = 598.0
 nine_patch_stretch = true
 texture_under = ExtResource("4_1sid8")
 texture_progress = ExtResource("5_uniig")
+
+[node name="EldritchAdaptiveMusic" parent="." unique_id=1392659806 instance=ExtResource("6_uniig")]

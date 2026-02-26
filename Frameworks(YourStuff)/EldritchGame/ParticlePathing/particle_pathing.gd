@@ -3,7 +3,7 @@ class_name EldritchParticlePathing extends Path2D
 const PathFollow2d = preload('uid://d3xire3t1b2b5')
 const GOOD_PLANET = preload("uid://jaq2sk636hlb")
 
-@onready var adaptive_music: EldritchAdaptiveMusic = $EldritchAdaptiveMusic as EldritchAdaptiveMusic
+var adaptive_music: EldritchAdaptiveMusic
 
 var eldritch_game : EldritchGame
 var path_movement_percent : float
@@ -14,6 +14,7 @@ var paths_array : Array[EldritchParticleFollow] = []
 @export var planets_to_spawn : Array[bool]
 
 func _ready() -> void:
+	adaptive_music = get_tree().get_first_node_in_group("EldritchAdaptiveMusic")
 	eldritch_game = get_tree().get_first_node_in_group("EldritchGame")
 	initialize_planets()
 	adaptive_music.start()

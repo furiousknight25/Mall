@@ -1,4 +1,4 @@
-class_name EldritchGame extends Node2D
+class_name EldritchGame extends Game
 
 ## amount gained from perfect chomp
 const GOOD_EAT_AMOUNT : float = 15
@@ -7,6 +7,7 @@ const BAD_EAT_AMOUNT : float = 5
 
 @onready var monsta: Monsta = $Monsta
 @onready var hunger_bar: TextureProgressBar = $HungerBar
+@onready var eldritch_adaptive_music: EldritchAdaptiveMusic = $EldritchAdaptiveMusic
 
 @warning_ignore("unused_signal") signal switch_to_new_scene
 @warning_ignore("unused_signal") signal reload_scene
@@ -19,10 +20,16 @@ func _start_game():
 	monsta.good_planet_eaten.connect(_on_good_planet_eaten)
 
 func win_game():
-	pass
+	eldritch_adaptive_music.win()
+	await eldritch_adaptive_music.win_outro.finished
+	end_game.emit(true)
+	get_tree().quit()
 
 func lose_game():
-	pass
+	eldritch_adaptive_music.lose()
+	await eldritch_adaptive_music.lose_outro.finished
+	end_game.emit(false)
+	get_tree().quit()
 
 func _on_good_planet_eaten(hit_was_good : bool):
 	var value_to_add : float
