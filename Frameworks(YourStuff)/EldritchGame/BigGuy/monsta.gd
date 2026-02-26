@@ -14,11 +14,10 @@ func _ready() -> void:
 	eating_zone.planet_suck.connect(suck_in_planet)
 
 func suck_in_planet(planet : Planet):
-	await adaptive_music.half_bar
 	var hit_was_good : bool
-	#await adaptive_music.current_beat
+	await adaptive_music.beat
 	
-	if adaptive_music.bar_index % 4 == 1:
+	if adaptive_music.bar_index % 4 == 0:
 		print("Good hit!")
 		hit_was_good = true
 	elif adaptive_music.bar_index % 4 == 2:

@@ -19,7 +19,7 @@ func _ready() -> void:
 	initialize_planets()
 	adaptive_music.start()
 	connect_adaptive_music_signals()
-	adaptive_music.fuck.connect(do_planet_beat_effect)
+	adaptive_music.half_bar.connect(do_planet_beat_effect)
 
 
 func do_planet_beat_effect() -> void:
@@ -45,7 +45,7 @@ func initialize_planets() -> void:
 	space_out_planets()
 
 func connect_adaptive_music_signals() -> void:
-	adaptive_music.half_bar.connect(progress_paths)
+	adaptive_music.fuck.connect(progress_paths)
 
 func parent_planet_to_line_follow(planet : Planet) -> void:
 	var path : EldritchParticleFollow = EldritchParticleFollow.new()

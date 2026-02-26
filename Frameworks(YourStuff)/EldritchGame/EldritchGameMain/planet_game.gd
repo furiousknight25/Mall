@@ -24,7 +24,7 @@ func win_game():
 	particle_pathing.should_be_moving = false
 	eldritch_adaptive_music.win()
 	await eldritch_adaptive_music.win_outro.finished
-	end_game.emit(true)
+	#end_game.emit(true)
 	get_tree().quit()
 
 func lose_game():
