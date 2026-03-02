@@ -119,22 +119,6 @@ process_mode = 3
 z_index = 5
 script = ExtResource("1_4l27e")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=954733009]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -576.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 324.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.12156863, 0.12156863, 0.11764706, 1)
-
 [node name="Dissapear" type="Node" parent="." unique_id=260553587 node_paths=PackedStringArray("affected_node")]
 script = ExtResource("2_4l27e")
 affected_node = NodePath("..")

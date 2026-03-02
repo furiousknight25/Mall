@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cbrntoax56ix8" path="res://Frameworks(YourStuff)/EldritchGame/Effect Components/Scripts/Effect Sequencers/control_node_effect_sequencer.gd" id="10_pd8i2"]
 [ext_resource type="Script" uid="uid://c0eq70gyg7rhf" path="res://Frameworks(YourStuff)/EldritchGame/Effect Components/Scripts/Effects/control_node_effect.gd" id="11_cv843"]
 [ext_resource type="PackedScene" uid="uid://bh166ecxqy5qu" path="res://Frameworks(YourStuff)/EldritchGame/Instructions/introduction_screen.tscn" id="12_thfao"]
+[ext_resource type="PackedScene" uid="uid://c0yej11t1qghx" path="res://Frameworks(YourStuff)/EldritchGame/EndingScreen/ending_screen.tscn" id="13_pd8i2"]
 
 [sub_resource type="Curve2D" id="Curve2D_3vgps"]
 _data = {
@@ -90,4 +91,8 @@ metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
 
 [node name="IntroductionScreen" parent="." unique_id=773554877 instance=ExtResource("12_thfao")]
 z_index = 8
+position = Vector2(576, 320)
+
+[node name="EndingScreen" parent="." unique_id=320439500 instance=ExtResource("13_pd8i2")]
+z_index = 10
 position = Vector2(576, 320)

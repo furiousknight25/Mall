@@ -18,6 +18,7 @@ var round_started : bool = false
 @onready var timer: Timer = $Timer as Timer
 @onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
 @onready var time_left_notifier: ControlNodeEffectSequencer = $TextureProgressBar/TimeLeftNotifier as ControlNodeEffectSequencer
+@onready var ending_screen: EldritchEndingScreen = $EndingScreen
 
 
 @warning_ignore("unused_signal") signal switch_to_new_scene
@@ -51,16 +52,22 @@ func _start_game():
 	monsta.good_planet_eaten.connect(_on_good_planet_eaten)
 
 func win_game():
+	timer.paused = true
 	particle_pathing.should_be_moving = false
 	eldritch_adaptive_music.win()
 	await eldritch_adaptive_music.win_outro.finished
+	ending_screen.do_ending()
+	await ending_screen.animation_player.animation_finished
 	#end_game.emit(true)
 	get_tree().quit()
 
 func lose_game():
+	timer.paused = true
 	particle_pathing.should_be_moving = false
 	eldritch_adaptive_music.lose()
 	await eldritch_adaptive_music.lose_outro.finished
+	ending_screen.do_ending()
+	await ending_screen.animation_player.animation_finished
 	end_game.emit(false)
 	get_tree().quit()
 
