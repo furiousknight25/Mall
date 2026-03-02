@@ -14,14 +14,27 @@ var should_be_moving : bool = true
 
 @export var planets_to_spawn : Array[bool]
 
-func _ready() -> void:
-	adaptive_music = get_tree().get_first_node_in_group("EldritchAdaptiveMusic")
-	eldritch_game = get_tree().get_first_node_in_group("EldritchGame")
-	initialize_planets()
-	adaptive_music.start()
-	connect_adaptive_music_signals()
-	adaptive_music.half_bar.connect(do_planet_beat_effect)
+#func _ready() -> void:
+	#add_to_group("ParticlePathing")
+	#adaptive_music = get_tree().get_first_node_in_group("EldritchAdaptiveMusic")
+	#eldritch_game = get_parent() as EldritchGame
+	#adaptive_music.start()
+	#connect_adaptive_music_signals()
+	#adaptive_music.half_bar.connect(do_planet_beat_effect)
+	#initialize_planets()
 
+func initialize():
+	add_to_group("ParticlePathing")
+	adaptive_music = get_tree().get_first_node_in_group("EldritchAdaptiveMusic")
+	eldritch_game = get_tree().get_first_node_in_group("Eldritchgame")
+	#adaptive_music.start()
+	#connect_adaptive_music_signals()
+	
+	initialize_planets()
+
+func start():
+	adaptive_music.half_bar.connect(do_planet_beat_effect)
+	connect_adaptive_music_signals()
 
 func do_planet_beat_effect() -> void:
 	for planet : Planet in planets:
@@ -31,12 +44,14 @@ func do_planet_beat_effect() -> void:
 
 
 func initialize_planets() -> void:
+	print('iniializing')
 	var good_planet : GoodPlanet
 	@warning_ignore("unused_variable")
 	var bad_planet : BadPlanet
 	for toggle in planets_to_spawn:
 		if toggle:
 			good_planet = GOOD_PLANET.instantiate() as GoodPlanet
+			eldritch_game.planets_to_eat += 1
 			parent_planet_to_line_follow(good_planet)
 		else:
 			bad_planet = BAD_PLANET.instantiate() as BadPlanet

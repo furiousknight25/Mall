@@ -19,16 +19,19 @@ var round_started : bool = false
 @onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
 @onready var time_left_notifier: ControlNodeEffectSequencer = $TextureProgressBar/TimeLeftNotifier as ControlNodeEffectSequencer
 @onready var ending_screen: EldritchEndingScreen = $EndingScreen
+@onready var planet_switcher: PlanetSwitcher = $PlanetSwitcher as PlanetSwitcher
 
 
 @warning_ignore("unused_signal") signal switch_to_new_scene
 @warning_ignore("unused_signal") signal reload_scene
 
+var planets_to_eat : int = 0
+
 func _ready() -> void:
 	Input.set_custom_mouse_cursor(MOUSE_CURSOR)
 	_start_game()
-		
 	await eldritch_adaptive_music.intro.finished
+	planet_switcher.spawn_in_new_path()
 	round_started = true
 	max_time = time * 100 * 2
 	texture_progress_bar.max_value = max_time
@@ -72,6 +75,7 @@ func lose_game():
 	get_tree().quit()
 
 func _on_good_planet_eaten(hit_was_good : bool):
+	planets_to_eat -= 1
 	var value_to_add : float
 	if hit_was_good:
 		value_to_add = GOOD_EAT_AMOUNT
@@ -79,6 +83,9 @@ func _on_good_planet_eaten(hit_was_good : bool):
 		value_to_add = BAD_EAT_AMOUNT
 	
 	tween_hunger_bar_to_value(hunger_bar.value + value_to_add)
+	
+	if planets_to_eat <= 0:
+		planet_switcher.switch_out_old_planets(get_tree().get_first_node_in_group("ParticlePathing"))
 	
 	if hunger_bar.value + value_to_add >= hunger_bar.max_value:
 		win_game()

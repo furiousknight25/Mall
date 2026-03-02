@@ -1,10 +1,9 @@
-[gd_scene format=3 uid="uid://dcsrmlrnv8ulg"]
+[gd_scene format=3 uid="uid://c5kqyrw006rju"]
 
 [ext_resource type="Script" uid="uid://bk6iqdpwoi5hx" path="res://Frameworks(YourStuff)/EldritchGame/EldritchGameMain/planet_game.gd" id="1_n1cwi"]
 [ext_resource type="Script" uid="uid://clp235kdxvy5f" path="res://Frameworks(YourStuff)/EldritchGame/ParticlePathing/particle_pathing.gd" id="2_f42ln"]
 [ext_resource type="PackedScene" uid="uid://jaq2sk636hlb" path="res://Frameworks(YourStuff)/EldritchGame/Planets/Scenes/good_planet.tscn" id="3_plsv7"]
 [ext_resource type="Texture2D" uid="uid://c61aau1jumg7e" path="res://Frameworks(YourStuff)/EldritchGame/Assets/Bubble.png" id="4_15c62"]
-
 
 [sub_resource type="Curve2D" id="Curve2D_wqi4e"]
 _data = {
