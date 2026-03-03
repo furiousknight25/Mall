@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://g34tt8y82wxq" path="res://Frameworks(YourStuff)/Mall/Assets/Drum silly.png" id="3_xj8bg"]
 [ext_resource type="Script" uid="uid://c8gldqcbn0vqb" path="res://Frameworks(YourStuff)/Mall/light_character.gd" id="5_cy6ea"]
 [ext_resource type="Script" uid="uid://bmxhf3q382k4r" path="res://Frameworks(YourStuff)/Mall/point_light_2d.gd" id="6_kfrln"]
+[ext_resource type="Texture2D" uid="uid://gt2qk5ul0w8q" path="res://Frameworks(YourStuff)/Mall/Assets/Guitar silly1.png" id="7_kfrln"]
+[ext_resource type="Texture2D" uid="uid://kicp1roo2w8c" path="res://Frameworks(YourStuff)/Mall/Assets/Horn silly1.png" id="8_wmwhb"]
+[ext_resource type="Texture2D" uid="uid://2svaf7hdt0vd" path="res://Frameworks(YourStuff)/Mall/Assets/Bass silly1.png" id="9_k75bx"]
+[ext_resource type="Texture2D" uid="uid://3dvpm6tp6ks7" path="res://Frameworks(YourStuff)/Mall/Assets/Piano silly.png" id="10_vfs7l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5bauv"]
 atlas = ExtResource("3_xj8bg")
@@ -44,6 +48,94 @@ fill = 1
 fill_from = Vector2(0.5043478, 0.49565217)
 fill_to = Vector2(0.9217391, 0.16086957)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmwhb"]
+atlas = ExtResource("7_kfrln")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb75m"]
+atlas = ExtResource("7_kfrln")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k75bx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmwhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb75m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k75bx"]
+atlas = ExtResource("8_wmwhb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfs7l"]
+atlas = ExtResource("8_wmwhb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aieua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k75bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfs7l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aieua"]
+atlas = ExtResource("9_k75bx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbn2r"]
+atlas = ExtResource("9_k75bx")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axqiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aieua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbn2r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbpk3"]
+atlas = ExtResource("10_vfs7l")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik0hu"]
+atlas = ExtResource("10_vfs7l")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwp7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbpk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik0hu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMallGame" type="Node2D" unique_id=30059727]
 script = ExtResource("1_ddgo5")
 
@@ -52,7 +144,7 @@ position = Vector2(575, 324)
 scale = Vector2(5.747321, 5.7619076)
 texture = ExtResource("2_fky30")
 
-[node name="Button" type="Button" parent="." unique_id=2124251651]
+[node name="DrumButton" type="Button" parent="." unique_id=2124251651]
 offset_left = 300.0
 offset_top = 145.0
 offset_right = 386.0
@@ -60,16 +152,16 @@ offset_bottom = 179.0
 pivot_offset = Vector2(38, 17)
 script = ExtResource("3_5bauv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button" unique_id=303145620]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DrumButton" unique_id=303145620]
 position = Vector2(45, 14)
 scale = Vector2(1.7304914, 1.7304914)
 sprite_frames = SubResource("SpriteFrames_cy6ea")
 frame_progress = 0.4693788
 
-[node name="Area2D" type="Area2D" parent="Button" unique_id=437829784]
+[node name="Area2D" type="Area2D" parent="DrumButton" unique_id=437829784]
 position = Vector2(36, 17)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Area2D" unique_id=1768524831]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DrumButton/Area2D" unique_id=1768524831]
 position = Vector2(6.5, 2.5)
 shape = SubResource("RectangleShape2D_cy6ea")
 
@@ -90,5 +182,93 @@ script = ExtResource("6_kfrln")
 visible = false
 blend_mode = 1
 
-[connection signal="body_entered" from="Button/Area2D" to="Button" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Button/Area2D" to="Button" method="_on_area_2d_body_exited"]
+[node name="GuitarButton" type="Button" parent="." unique_id=1148760309]
+offset_left = 788.99994
+offset_top = 159.99997
+offset_right = 874.99994
+offset_bottom = 193.99997
+pivot_offset = Vector2(38, 17)
+script = ExtResource("3_5bauv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GuitarButton" unique_id=1057880994]
+position = Vector2(45, 14)
+scale = Vector2(1.7304914, 1.7304914)
+sprite_frames = SubResource("SpriteFrames_k75bx")
+
+[node name="Area2D" type="Area2D" parent="GuitarButton" unique_id=2099493275]
+position = Vector2(36, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuitarButton/Area2D" unique_id=506574745]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_cy6ea")
+
+[node name="HornButton" type="Button" parent="." unique_id=438940120]
+offset_left = 823.0315
+offset_top = 386.42633
+offset_right = 909.0315
+offset_bottom = 420.42633
+pivot_offset = Vector2(38, 17)
+script = ExtResource("3_5bauv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HornButton" unique_id=1326178394]
+position = Vector2(45, 14)
+scale = Vector2(1.7304914, 1.7304914)
+sprite_frames = SubResource("SpriteFrames_aieua")
+
+[node name="Area2D" type="Area2D" parent="HornButton" unique_id=397472801]
+position = Vector2(36, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HornButton/Area2D" unique_id=1058803143]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_cy6ea")
+
+[node name="BassButton" type="Button" parent="." unique_id=651062089]
+offset_left = 294.66483
+offset_top = 481.46484
+offset_right = 380.66483
+offset_bottom = 515.46484
+pivot_offset = Vector2(38, 17)
+script = ExtResource("3_5bauv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BassButton" unique_id=1171844886]
+position = Vector2(45, 14)
+scale = Vector2(1.7304914, 1.7304914)
+sprite_frames = SubResource("SpriteFrames_axqiw")
+
+[node name="Area2D" type="Area2D" parent="BassButton" unique_id=1788841962]
+position = Vector2(36, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BassButton/Area2D" unique_id=358797134]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_cy6ea")
+
+[node name="PianoButton" type="Button" parent="." unique_id=787427867]
+offset_left = 616.52484
+offset_top = 311.77127
+offset_right = 702.52484
+offset_bottom = 345.77127
+pivot_offset = Vector2(38, 17)
+script = ExtResource("3_5bauv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PianoButton" unique_id=1732946134]
+position = Vector2(45, 14)
+scale = Vector2(1.7304914, 1.7304914)
+sprite_frames = SubResource("SpriteFrames_xwp7i")
+
+[node name="Area2D" type="Area2D" parent="PianoButton" unique_id=217910388]
+position = Vector2(36, 17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PianoButton/Area2D" unique_id=278051593]
+position = Vector2(6.5, 2.5)
+shape = SubResource("RectangleShape2D_cy6ea")
+
+[connection signal="body_entered" from="DrumButton/Area2D" to="DrumButton" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="DrumButton/Area2D" to="DrumButton" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="GuitarButton/Area2D" to="GuitarButton" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="GuitarButton/Area2D" to="GuitarButton" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="HornButton/Area2D" to="HornButton" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="HornButton/Area2D" to="HornButton" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="BassButton/Area2D" to="BassButton" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="BassButton/Area2D" to="BassButton" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="PianoButton/Area2D" to="PianoButton" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PianoButton/Area2D" to="PianoButton" method="_on_area_2d_body_exited"]
