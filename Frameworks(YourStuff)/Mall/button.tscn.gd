@@ -1,16 +1,23 @@
 extends Button
 
+@onready var adaptive_music: Node = $"../AdaptiveMusic"
+
 @export var hover_scale := 1.2
 @export var scale_speed := 0.15
 @export var wiggle_amount := 5.0
 @export var wiggle_speed := 8.0
 @onready var circle_player: AnimationPlayer = $"CirclePlayer"
 @onready var main_mall_game: Node2D = $"../.."
-
+@onready var animsprite : AnimatedSprite2D = $AnimatedSprite2D
 var _is_hovered := false
 var _base_scale := Vector2.ONE
 var _base_rotation := 0.0
 var _time := 0.0
+@export var index := 0
+@export var name_click : String
+const HIRED_ = preload("res://Frameworks(YourStuff)/Mall/hired!.tscn")
+
+
 
 func show_circ():
 	circle_player.play("showcirc")
@@ -22,15 +29,22 @@ func _ready():
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
+var clicked = false
 func _process(delta):
-	if _is_hovered:
+	if _is_hovered and !clicked:
 		_time += delta * wiggle_speed
 		rotation_degrees = _base_rotation + sin(_time) * wiggle_amount
 		if Input.is_action_just_pressed("space"):
-			main_mall_game.add_player(self)
-			print(self)
+			var hire : RigidBody2D = HIRED_.instantiate()
+			add_child(hire)
+			hire.global_position = circle_player.get_child(0).global_position
+			hire.apply_central_impulse(Vector2(0,-300))
 			
-	else:
+			adaptive_music.increase_volume(index, -10.0, .1,1)
+			clicked = true
+			main_mall_game.add_player(self)
+			animsprite.play("default")
+	else :
 		rotation_degrees = lerp(rotation_degrees, _base_rotation, delta * 10)
 		
 
@@ -41,8 +55,6 @@ func _on_mouse_entered():
 	tween.tween_property(self, "scale", _base_scale * hover_scale, scale_speed)\
 		.set_trans(Tween.TRANS_BACK)\
 		.set_ease(Tween.EASE_OUT)
-	
-	
 
 func _on_mouse_exited():
 	return
@@ -63,8 +75,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	tween.tween_property(self, "scale", _base_scale * hover_scale, scale_speed)\
 		.set_trans(Tween.TRANS_BACK)\
 		.set_ease(Tween.EASE_OUT)
-	
-
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	_is_hovered = false

@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dro5d573niwan"]
 
 [ext_resource type="Script" uid="uid://6cxuvycm8n6m" path="res://Frameworks(YourStuff)/Mall/main_mall_game.gd" id="1_ddgo5"]
+[ext_resource type="Texture2D" uid="uid://c48vt8l16xxmi" path="res://Frameworks(YourStuff)/Mall/timerreal.png" id="2_0n2nu"]
 [ext_resource type="Texture2D" uid="uid://b4jpisvxiyaks" path="res://Frameworks(YourStuff)/Mall/Assets/stage background.png" id="2_fky30"]
+[ext_resource type="Texture2D" uid="uid://c0nnun8uq4a8y" path="res://Frameworks(YourStuff)/Mall/timerrealfilled.png" id="3_3q0f6"]
 [ext_resource type="Script" uid="uid://da023o5y5kqfx" path="res://Frameworks(YourStuff)/Mall/button.tscn.gd" id="3_5bauv"]
 [ext_resource type="Texture2D" uid="uid://g34tt8y82wxq" path="res://Frameworks(YourStuff)/Mall/Assets/Drum silly.png" id="3_xj8bg"]
 [ext_resource type="Script" uid="uid://c8gldqcbn0vqb" path="res://Frameworks(YourStuff)/Mall/light_character.gd" id="5_cy6ea"]
+[ext_resource type="AudioStream" uid="uid://85sxat1xj7op" path="res://Frameworks(YourStuff)/Mall/Assets/Big switch sound effect.mp3" id="5_i1q1l"]
 [ext_resource type="Script" uid="uid://bmxhf3q382k4r" path="res://Frameworks(YourStuff)/Mall/point_light_2d.gd" id="6_kfrln"]
 [ext_resource type="Texture2D" uid="uid://gt2qk5ul0w8q" path="res://Frameworks(YourStuff)/Mall/Assets/Guitar silly1.png" id="7_kfrln"]
 [ext_resource type="PackedScene" uid="uid://dgl3bgik550th" path="res://Frameworks(YourStuff)/Mall/circle.tscn" id="7_wbn2r"]
@@ -13,12 +16,29 @@
 [ext_resource type="Texture2D" uid="uid://2svaf7hdt0vd" path="res://Frameworks(YourStuff)/Mall/Assets/Bass silly1.png" id="9_k75bx"]
 [ext_resource type="Texture2D" uid="uid://3dvpm6tp6ks7" path="res://Frameworks(YourStuff)/Mall/Assets/Piano silly.png" id="10_vfs7l"]
 [ext_resource type="Texture2D" uid="uid://ccqjtpyglsphi" path="res://Frameworks(YourStuff)/Mall/Assets/music intro screen1.png" id="12_aieua"]
+[ext_resource type="Script" uid="uid://deqcil6wiin53" path="res://Frameworks(YourStuff)/Mall/adaptive_music.gd" id="12_lxct2"]
+[ext_resource type="AudioStream" uid="uid://3sj645woye80" path="res://Frameworks(YourStuff)/Mall/musicreal/(Drums).wav" id="13_lxct2"]
+[ext_resource type="AudioStream" uid="uid://ce6em1kk0edtc" path="res://Frameworks(YourStuff)/Mall/musicreal/(Guitar).wav" id="14_75fe8"]
 [ext_resource type="Texture2D" uid="uid://bj6q8tah3nd21" path="res://Frameworks(YourStuff)/Mall/Assets/win screen frame 1.png" id="14_ik0hu"]
+[ext_resource type="AudioStream" uid="uid://dxjk5467247em" path="res://Frameworks(YourStuff)/Mall/musicreal/(Horn).wav" id="15_ctbub"]
 [ext_resource type="Texture2D" uid="uid://bgliivnohjhf3" path="res://Frameworks(YourStuff)/Mall/Assets/win screen frame 2.png" id="15_xwp7i"]
 [ext_resource type="Texture2D" uid="uid://3rew8dnnt6uq" path="res://Frameworks(YourStuff)/Mall/Assets/music lose screen1.png" id="16_565h4"]
+[ext_resource type="AudioStream" uid="uid://ubnadvmhei84" path="res://Frameworks(YourStuff)/Mall/musicreal/(Bass).wav" id="16_i1q1l"]
+[ext_resource type="AudioStream" uid="uid://cg2cvs21dkiwt" path="res://Frameworks(YourStuff)/Mall/musicreal/(Piano).wav" id="17_0n2nu"]
 [ext_resource type="Texture2D" uid="uid://dkk8xy620ss7p" path="res://Frameworks(YourStuff)/Mall/Assets/bar.png" id="17_565h4"]
 [ext_resource type="Texture2D" uid="uid://cslsguc66a4q" path="res://Frameworks(YourStuff)/Mall/Assets/light.png" id="18_8map5"]
 [ext_resource type="Script" uid="uid://bm6pacmt6pf4h" path="res://Frameworks(YourStuff)/Mall/light.gd" id="19_8map5"]
+[ext_resource type="AudioStream" uid="uid://clea8wwdlpofp" path="res://Frameworks(YourStuff)/Mall/music/oo.mp3" id="21_0n2nu"]
+[ext_resource type="Texture2D" uid="uid://dpol0oiqpej8y" path="res://Frameworks(YourStuff)/Mall/Assets/realtutorial.png" id="24_3q0f6"]
+
+[sub_resource type="Gradient" id="Gradient_ctbub"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i1q1l"]
+gradient = SubResource("Gradient_ctbub")
+fill = 1
+fill_from = Vector2(0.491453, 0.4871795)
+fill_to = Vector2(0.86752135, 0.12820514)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wmwhb"]
 
@@ -219,6 +239,42 @@ tracks/5/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../GameTimer/TextureProgressBar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1084.9999, -119.999985)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../GameTimer/TextureProgressBar:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.6615953]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../MusicIntroScreen1/Realtutorial:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.1415927]
+}
 
 [sub_resource type="Animation" id="Animation_wmwhb"]
 resource_name = "done"
@@ -297,7 +353,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(2.6333334, 4.1000004, 4.4333334),
 "transitions": PackedFloat32Array(2.0705302, 0.36602148, 1),
 "update": 0,
-"values": [Vector2(250.6, 17), Vector2(-155.57, 17), Vector2(-155.57, 17)]
+"values": [Vector2(250.6, 17), Vector2(-155.57, 17), Vector2(-200, 17)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -334,6 +390,42 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../GameTimer/TextureProgressBar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.1, 3.3000002, 3.4, 3.5666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1084.9999, -119.999985), Vector2(993.99994, 60.999992), Vector2(960, 59.00004), Vector2(956, 55)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../GameTimer/TextureProgressBar:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.1, 3.2666667, 3.3000002, 3.4333334, 3.5666668, 3.6000001, 3.8333335, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.6615953, -0.47198996, -0.35018897, 0.13701278, 0.002800343, -0.030752689, -0.0082507115, -0.0082507115]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../MusicIntroScreen1/Realtutorial:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.1666667, 2.266667, 2.3000002, 2.3666668, 2.4333334, 2.5000002, 2.8, 3.0999997),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1.8025011, 1),
+"update": 0,
+"values": [3.1415927, 6.021386, 6.4177074, 6.276361, 6.3158774, 6.2809634, 6.2809634, 5.9391565]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vfs7l"]
@@ -458,13 +550,41 @@ script = ExtResource("1_ddgo5")
 wait_time = 10.0
 one_shot = true
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="GameTimer" unique_id=822234570]
+offset_left = 1084.9999
+offset_top = -119.999985
+offset_right = 1277.0101
+offset_bottom = -8.000015
+rotation = -0.6615953
+scale = Vector2(5.884953, 5.884953)
+pivot_offset = Vector2(7.6399536, 8.1690445)
+max_value = 1.0
+step = 0.05
+fill_mode = 4
+texture_over = ExtResource("2_0n2nu")
+texture_progress = ExtResource("3_3q0f6")
+
+[node name="PointLight2D" type="PointLight2D" parent="GameTimer/TextureProgressBar" unique_id=1586963937]
+position = Vector2(8.236131, 6.2947946)
+scale = Vector2(0.37676686, 0.37676686)
+texture = SubResource("GradientTexture2D_i1q1l")
+offset = Vector2(0.31576538, 5.014023)
+
 [node name="StageBackground" type="Sprite2D" parent="." unique_id=824705483]
 position = Vector2(575, 324)
 scale = Vector2(5.747321, 5.7619076)
 texture = ExtResource("2_fky30")
 metadata/_edit_lock_ = true
 
+[node name="lighton" type="AudioStreamPlayer" parent="StageBackground" unique_id=796797358]
+stream = ExtResource("5_i1q1l")
+
+[node name="lightoff" type="AudioStreamPlayer" parent="StageBackground" unique_id=785963120]
+stream = ExtResource("5_i1q1l")
+pitch_scale = 0.9
+
 [node name="LightCharacter" type="CharacterBody2D" parent="." unique_id=1414147540]
+visible = false
 position = Vector2(593, 199)
 script = ExtResource("5_cy6ea")
 
@@ -481,11 +601,11 @@ script = ExtResource("6_kfrln")
 
 [node name="DrumButton" type="Button" parent="Buttons" unique_id=2124251651]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 300.0
-offset_top = 145.0
-offset_right = 386.0
-offset_bottom = 179.0
-scale = Vector2(1.9556571, 1.9556571)
+offset_left = 313.0
+offset_top = 124.0
+offset_right = 399.0
+offset_bottom = 158.0
+scale = Vector2(2.8956642, 2.8956642)
 pivot_offset = Vector2(38, 17)
 script = ExtResource("3_5bauv")
 
@@ -506,13 +626,14 @@ shape = SubResource("RectangleShape2D_cy6ea")
 
 [node name="GuitarButton" type="Button" parent="Buttons" unique_id=1148760309]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 788.9999
-offset_top = 159.99997
-offset_right = 874.9999
-offset_bottom = 193.99997
-scale = Vector2(1.9556571, 1.9556571)
+offset_left = 782.0
+offset_top = 125.0
+offset_right = 868.0
+offset_bottom = 159.0
+scale = Vector2(2.9254763, 2.9254763)
 pivot_offset = Vector2(38, 17)
 script = ExtResource("3_5bauv")
+index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/GuitarButton" unique_id=1057880994]
 position = Vector2(45, 14)
@@ -533,13 +654,14 @@ position = Vector2(845, 184)
 
 [node name="HornButton" type="Button" parent="Buttons" unique_id=438940120]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 823.0315
-offset_top = 386.42633
-offset_right = 909.0315
-offset_bottom = 420.42633
-scale = Vector2(1.9556571, 1.9556571)
+offset_left = 555.00006
+offset_top = 320.00003
+offset_right = 641.00006
+offset_bottom = 354.00003
+scale = Vector2(2.4106357, 2.4106357)
 pivot_offset = Vector2(38, 17)
 script = ExtResource("3_5bauv")
+index = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/HornButton" unique_id=1326178394]
 position = Vector2(45, 14)
@@ -560,13 +682,14 @@ position = Vector2(873, 413)
 
 [node name="BassButton" type="Button" parent="Buttons" unique_id=651062089]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 294.66483
-offset_top = 481.46484
-offset_right = 380.66483
-offset_bottom = 515.46484
-scale = Vector2(1.9556571, 1.9556571)
+offset_left = 279.00003
+offset_top = 496.0
+offset_right = 365.00003
+offset_bottom = 530.0
+scale = Vector2(2.3935947, 2.3935947)
 pivot_offset = Vector2(38, 17)
 script = ExtResource("3_5bauv")
+index = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/BassButton" unique_id=1171844886]
 position = Vector2(45, 14)
@@ -587,13 +710,14 @@ position = Vector2(355, 500)
 
 [node name="PianoButton" type="Button" parent="Buttons" unique_id=787427867]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 541.00006
-offset_top = 312.00003
-offset_right = 627.00006
-offset_bottom = 346.00003
-scale = Vector2(1.9556571, 1.9556571)
+offset_left = 767.0
+offset_top = 505.0
+offset_right = 853.0
+offset_bottom = 539.0
+scale = Vector2(2.3230782, 2.3230782)
 pivot_offset = Vector2(38, 17)
 script = ExtResource("3_5bauv")
+index = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Buttons/PianoButton" unique_id=1732946134]
 position = Vector2(45, 14)
@@ -610,7 +734,37 @@ shape = SubResource("RectangleShape2D_cy6ea")
 [node name="CirclePlayer" parent="Buttons/PianoButton" unique_id=369587253 instance=ExtResource("7_wbn2r")]
 
 [node name="Circle" parent="Buttons/PianoButton/CirclePlayer" index="0" unique_id=1209456986]
-position = Vector2(676, 335)
+position = Vector2(592, 335)
+
+[node name="AdaptiveMusic" type="Node" parent="Buttons" unique_id=200767823 node_paths=PackedStringArray("tracks")]
+script = ExtResource("12_lxct2")
+tracks = [NodePath("0"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4"), NodePath("5")]
+bpm = 110.0
+metadata/_custom_type_script = "uid://bso75uet1iy0r"
+
+[node name="0" type="AudioStreamPlayer" parent="Buttons/AdaptiveMusic" unique_id=680902505]
+stream = ExtResource("13_lxct2")
+volume_db = -80.0
+
+[node name="1" type="AudioStreamPlayer" parent="Buttons/AdaptiveMusic" unique_id=1235241734]
+stream = ExtResource("14_75fe8")
+volume_db = -80.0
+
+[node name="2" type="AudioStreamPlayer" parent="Buttons/AdaptiveMusic" unique_id=984734979]
+stream = ExtResource("15_ctbub")
+volume_db = -80.0
+
+[node name="3" type="AudioStreamPlayer" parent="Buttons/AdaptiveMusic" unique_id=1262547875]
+stream = ExtResource("16_i1q1l")
+volume_db = -80.0
+
+[node name="4" type="AudioStreamPlayer" parent="Buttons/AdaptiveMusic" unique_id=917783161]
+stream = ExtResource("17_0n2nu")
+volume_db = -80.0
+
+[node name="5" type="AudioStreamPlayer" parent="Buttons/AdaptiveMusic" unique_id=1707031123]
+stream = ExtResource("21_0n2nu")
+volume_db = -80.0
 
 [node name="BackgroundDarkness" type="DirectionalLight2D" parent="." unique_id=868587843]
 visible = false
@@ -639,9 +793,18 @@ region_enabled = true
 region_rect = Rect2(0, 0, 96.39108, 106.66256)
 
 [node name="MusicIntroScreen1" type="Sprite2D" parent="." unique_id=628270868]
+z_index = 1
 position = Vector2(589, -83.00003)
 scale = Vector2(3.323822, 3.323822)
 texture = ExtResource("12_aieua")
+
+[node name="Realtutorial" type="Sprite2D" parent="MusicIntroScreen1" unique_id=1209808205]
+z_as_relative = false
+position = Vector2(-67.49175, -1.8914466)
+rotation = 3.1415927
+scale = Vector2(0.6167538, 0.6167538)
+texture = ExtResource("24_3q0f6")
+offset = Vector2(-74.0654, -0.46102905)
 
 [node name="Label" type="Label" parent="." unique_id=1321182134]
 offset_left = 1293.0
@@ -686,6 +849,7 @@ offset = Vector2(34.888245, 55.113358)
 script = ExtResource("19_8map5")
 
 [node name="PointLight2D" type="PointLight2D" parent="Bar/Light" unique_id=732662523]
+visible = false
 position = Vector2(10.169453, 12.203354)
 texture = SubResource("GradientTexture2D_gwn7v")
 
@@ -700,6 +864,7 @@ texture = SubResource("GradientTexture2D_gwn7v")
 [connection signal="body_exited" from="Buttons/BassButton/Area2D" to="Buttons/BassButton" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Buttons/PianoButton/Area2D" to="Buttons/PianoButton" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Buttons/PianoButton/Area2D" to="Buttons/PianoButton" method="_on_area_2d_body_exited"]
+[connection signal="finished" from="Buttons/AdaptiveMusic/0" to="." method="_on__finished"]
 
 [editable path="Buttons/DrumButton/CirclePlayer"]
 [editable path="Buttons/GuitarButton/CirclePlayer"]
